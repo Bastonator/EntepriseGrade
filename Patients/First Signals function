@@ -1,0 +1,12 @@
+def patient_saved(sender, instance: Patient, created, **kwargs):
+    channel_layer = get_channel_layer()
+    payload = {
+        "type": "patient.message",   # event type the consumer handles
+        "action": "created" if created else "updated",
+        "patient": instance.as_dict(),
+    }
+    # send to the "products" group
+    async_to_sync(channel_layer.group_send)(
+        "patients",  # group name
+        {"type": "send_json", "text": json.dumps(payload)}
+    )
