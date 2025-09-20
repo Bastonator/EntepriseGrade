@@ -256,8 +256,6 @@ STATIC_LOCATION = 'static'
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
-AWS_ACCESS_KEY_ID = 'AKIAXZRBXLNEG67H2TNV'
-AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'docbasebucket1'
 AWS_S3_REGION_NAME = 'eu-north-1'
 AWS_S3_FILE_OVERWRITE = False
