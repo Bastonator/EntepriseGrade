@@ -24,13 +24,13 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run tests
+      - name: Run pytest
         run: |
           pytest --maxfail=1 --disable-warnings -q
       - name: Run Django Testcases
         run: |
           python manage.py test Patients
 
-        - name: Run Django Testcases
-          run: |
-            python manage.py test Patients
+      - name: Run Django Testcases
+        run: |
+          python manage.py test Patients
